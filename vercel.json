@@ -3,34 +3,44 @@
   "name": "ai-avatar",
   "builds": [
     {
-      "src": "frontend/**",
+      "src": "api/**/*.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "public/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/frontend/index.html"
-    },
-    {
-      "src": "/styles.css",
-      "dest": "/frontend/styles.css"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
       "src": "/app.js",
-      "dest": "/frontend/app.js"
+      "dest": "/public/app.js"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/public/styles.css"
+    },
+    {
+      "src": "/",
+      "dest": "/public/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "/public/$1"
     }
   ],
   "env": {
-    "BACKEND_URL": "@backend_url"
+    "OPENAI_API_KEY": "@openai_api_key",
+    "D_ID_API_KEY": "@d_id_api_key",
+    "ELEVENLABS_API_KEY": "@elevenlabs_api_key"
   },
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -42,7 +52,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "X-Requested-With, Content-Type, Authorization"
+          "value": "Content-Type, Authorization"
         }
       ]
     }
