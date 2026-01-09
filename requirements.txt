@@ -2,7 +2,7 @@
 
 # Web Framework
 Flask==3.0.0
-flask-cors==4.0.0
+flask-cors==6.0.0
 flask-sock==0.7.0
 
 # AI & ML
@@ -13,8 +13,8 @@ python-dotenv==1.0.0
 simple-websocket==1.0.0
 
 # HTTP Requests
-requests==2.31.0
-aiohttp==3.9.1
+requests==2.32.4
+aiohttp==3.12.14
 
 # Audio Processing
 pydub==0.25.1
@@ -26,5 +26,5 @@ pytz==2023.3
 
 # Development
 pytest==7.4.3
-black==23.12.1
+black==24.3.0
 flake8==7.0.0
