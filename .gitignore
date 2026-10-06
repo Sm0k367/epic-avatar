@@ -1,6 +1,30 @@
-# Environment Variables
+# Environment & Secrets
 .env
-config/.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.json
+config.json
+credentials.json
+
+# API Keys & Tokens
+.api_key
+.tokens
+.secrets
+api_keys.json
+oauth_tokens.json
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
 
 # Python
 __pycache__/
@@ -20,56 +44,87 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
 
-# Virtual Environment
+# Virtual Environments
 venv/
-ENV/
 env/
+ENV/
 .venv
-
-# Node
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
+.env
 
 # Logs
 *.log
 logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# Database
+# Local database files
 *.db
 *.sqlite
 *.sqlite3
-
-# API Keys and Secrets
-*.pem
-*.key
-secrets/
+local.db
 
 # OS
-Thumbs.db
 .DS_Store
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
+Thumbs.db
+desktop.ini
 
 # Temporary files
+tmp/
+temp/
 *.tmp
-*.temp
-.cache/
+*.bak
+*.swp
+
+# Docker
+.docker
+.dockerignore
+
+# Node/npm (if applicable)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Docker volumes & data
+volumes/
+data/
+*.db-journal
+
+# Personal/Local
+local/
+private/
+personal/
+secrets/
+creds/
+
+# IDE generated files
+*.sublime-project
+*.sublime-workspace
+.eslintcache
+.jest-cache
